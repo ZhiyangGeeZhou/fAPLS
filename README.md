@@ -1,4 +1,4 @@
-# R code for the functional continuum regression
+# R code for fAPLS
 ## Instruction
 - Tested at RStudio. 
 - Create two folders named after **Rimage** and **figure**.
