@@ -1,7 +1,7 @@
 #' Put main.R & supportFun.R into the identical folder.
 #' In the same folder, create two subfolders named figure' & 'Rimage', respectively.
 
-# rm(list = ls())
+rm(list = ls())
 if (!("rstudioapi" %in% rownames(installed.packages()))) 
   install.packages("rstudioapi")
 setwd(dirname(rstudioapi::getSourceEditorContext()$path))
@@ -11,15 +11,15 @@ source("functions.R")
 #### Global settings
 options(warn = -1, digits = 4)
 set.seed(1)
-# FVE.x = .99
-# FVE.y = .99
-# RR = 200 # number of replication
-# propTrain = .8 # proportion of real dataset left for training
-# realCase = 1 # 1 for DTI; 2 for BG
-# simu = F # T for simulation, F for real data
-# simuCase = 2 # 1 for beta = P_2(s)P_2(t); 2 for beta = P_4(s)P_4(t)
-# rho = .9 # control the autocorrelation for epsilon
-# SNR = 5 # signal-to-noise-ratio for simulation
+FVE.x = .99
+FVE.y = .99
+RR = 200 # number of replication
+propTrain = .8 # proportion of real dataset left for training
+realCase = 1 # 1 for DTI; 2 for BG
+simu = F # T for simulation, F for real data
+simuCase = 2 # 1 for beta = P_2(s)P_2(t); 2 for beta = P_4(s)P_4(t)
+rho = .9 # control the autocorrelation for epsilon
+SNR = 5 # signal-to-noise-ratio for simulation
 
 #### Simulated data ####
 
@@ -98,9 +98,9 @@ if (simu == F){
 
 # Dangerous! clear existing result
 res.fAPLS = list(); time.fAPLS = numeric(); reispe.fAPLS = numeric(); reisee.fAPLS = numeric()
-# res.SigComp = list(); time.SigComp = numeric(); reispe.SigComp = numeric(); reisee.SigComp = numeric()
-# res.NIPALS = list(); time.NIPALS = numeric(); reispe.NIPALS = numeric(); reisee.NIPALS = numeric()
-# res.SIMPLS = list(); time.SIMPLS = numeric(); reispe.SIMPLS = numeric(); reisee.SIMPLS = numeric()
+res.SigComp = list(); time.SigComp = numeric(); reispe.SigComp = numeric(); reisee.SigComp = numeric()
+res.NIPALS = list(); time.NIPALS = numeric(); reispe.NIPALS = numeric(); reisee.NIPALS = numeric()
+res.SIMPLS = list(); time.SIMPLS = numeric(); reispe.SIMPLS = numeric(); reisee.SIMPLS = numeric()
 
 # Check current progress
 check.fAPLS = length(time.fAPLS)
@@ -253,14 +253,12 @@ for (R in 1:RR) {
 # ReISEPE matrix and boxplots
 reispeLst = list(
   reispe.fAPLS
-  # ,reispe.FPCR
   ,reispe.SigComp
   ,reispe.NIPALS
   ,reispe.SIMPLS
 )
 names(reispeLst) = c(
   'fAPLS'
-  # ,'FPCR'
   ,'SigComp'
   ,'NIPALS'
   ,'SIMPLS'
@@ -277,7 +275,6 @@ boxplotErr(RR, reispeMat, type = 'ReISPE')
 if (simu == T){
   reiseeLst = list(
     reisee.fAPLS
-    # ,reisee.FPCR
     ,reisee.SigComp
     ,reisee.NIPALS
     ,reisee.SIMPLS
@@ -294,7 +291,6 @@ if (simu == T){
 # Running time
 round(c(
   sum(time.fAPLS)
-  # ,sum(time.FPCR)
   ,sum(time.SigComp)
   ,sum(time.NIPALS)
   ,sum(time.SIMPLS)
