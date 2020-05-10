@@ -241,9 +241,13 @@ for (R in 1:RR) {
     cat(R, '\n')
   }else 
     cat(R)
-  # shrink the R space
-  if (R == RR & simu == T){
-    rm(x.all, y.all)
+  
+  # save the R space
+  if (R == RR){
+    if (simu == T){
+      # shrink the R space for simulation
+      rm(x.all, y.all)
+    }
     save.image(file = file)
   }
 }
