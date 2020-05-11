@@ -253,7 +253,7 @@ for (R in 1:RR) {
 }
 
 ################ Plots and summaries of results ##################
-
+source("functions.R")
 # ReISEPE matrix and boxplots
 reispeLst = list(
   reispe.fAPLS
@@ -272,7 +272,6 @@ round(cbind(
   apply(reispeMat, 2, mean),
   apply(reispeMat, 2, sd)
 ), digits = 2)
-source("functions.R")
 boxplotErr(RR, reispeMat, type = 'ReISPE')
 
 # ReISEE matrix and boxplots
