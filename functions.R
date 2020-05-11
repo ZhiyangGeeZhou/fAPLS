@@ -641,7 +641,11 @@ boxplotErr = function(nrowplot, errMat, type){
     coord_cartesian(ylim = c(0, 1)) +
     labs(x = '', y = type, title = '') + 
     theme_bw() +
-    theme(legend.position = "none", panel.border = element_blank(), plot.title = element_text(hjust = 0.5))
+    theme(legend.position = "none", 
+          panel.border = element_blank(), 
+          plot.title = element_text(hjust = 0.5),
+          text = element_text(size=25)
+          )
   
   plot(bplot)
   file = ifelse(simu,
@@ -679,8 +683,10 @@ PlotMultiCurve = function(x, y){
   curvesplot.simu +
     ggtitle("") +
     theme_bw()+
-    theme(legend.position = "none", panel.border = element_blank(), plot.title = element_text(hjust = 0.5))
-}
+    theme(legend.position = "none", 
+          panel.border = element_blank(), 
+          plot.title = element_text(hjust = 0.5))
+  }
 
 t.bengio = function(x, y, alternative, propTrain){
   t.stat = t.test(x, y, paired = T, alternative)$statistic
