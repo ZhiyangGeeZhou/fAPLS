@@ -639,13 +639,7 @@ boxplotErr = function(nrowplot, errMat, type){
     # geom_violin() +
     geom_boxplot(outlier.shape = NA, width = .5) +
     coord_cartesian(ylim = c(0, 1)) +
-    labs(x = '', y = type,
-         title = switch(simu + 1,
-                        " ",
-                        bquote(rho == .(rho))
-                        
-         )
-    ) + 
+    labs(x = '', y = type, title = '') + 
     theme_bw() +
     theme(legend.position = "none", panel.border = element_blank(), plot.title = element_text(hjust = 0.5))
   
