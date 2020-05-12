@@ -8,4 +8,4 @@
 
 ## Reference 
 Zhou, Z. (2020). Partial least squares for function-on-function regression via Krylov subspaces.
-[doi:10.1016/j.jmva.2019.03.006](http://dx.doi.org/10.1016/j.jmva.2019.03.006)
+[arXiv:2005.04798](https://arxiv.org/abs/2005.04798)
