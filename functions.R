@@ -305,6 +305,8 @@ SigComp = function(x.old, y.old, domain.x, domain.y, x.new = NULL, y.new = NULL,
   return(list(Beta = Beta.hat, reispe = reispe))
 }
 
+# NIPALS
+# refer to https://github.com/hanshang/FPLSR
 NIPALS = function(x.old, y.old, domain.x, domain.y, x.new = NULL, y.new = NULL, p.max){
   x = rbind(x.old, x.new)
   # d_time_x = 1:ncol(x)
@@ -381,6 +383,8 @@ NIPALS = function(x.old, y.old, domain.x, domain.y, x.new = NULL, y.new = NULL, 
   return(list(Beta = Beta_hat_nipals, reispe = reispe))
 }
 
+# SIMPLS
+# refer to https://github.com/hanshang/FPLSR
 SIMPLS = function(x.old, y.old, domain.x, domain.y, x.new = NULL, y.new = NULL, p.max){
   x = rbind(x.old, x.new)
   # d_time_x = 1:ncol(x)
