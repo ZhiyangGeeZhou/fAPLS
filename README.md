@@ -7,5 +7,5 @@
 - Saved R image-files and figures go into **Rimage** and **figure**, respectively.
 
 ## Reference 
-Zhou, Z. (2020). Partial least squares for function-on-function regression via Krylov subspaces.
+**Zhou, Z**. (2020). Partial least squares for function-on-function regression via Krylov subspaces.
 [arXiv:2005.04798](https://arxiv.org/abs/2005.04798)
